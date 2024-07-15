@@ -1,5 +1,4 @@
-use gstd::{debug, exec, Decode};
-use gtest::{Program, RunResult, System};
+use gtest::{Program, System};
 use pebbles_game_io::*;
 
 static SENDER_ID: u64 = 16;
