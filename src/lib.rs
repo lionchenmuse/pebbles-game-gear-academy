@@ -110,10 +110,10 @@ fn choose_first_player() -> Player {
     let r_num = get_random_u32();
     // 如果随机数是偶数，则第一个玩家为用户，否则为程序
     if r_num % 2 == 0 {
-        debug!("First player: User");
+        debug!("First player Random generated : User");
         Player::User
     } else {
-        debug!("First player: Program");
+        debug!("First player Random generated: Program");
         Player::Program
     }
 }

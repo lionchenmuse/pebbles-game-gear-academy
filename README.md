@@ -40,6 +40,29 @@ pebbles-game
 3. state()函数，其作用是： 
 • 利用msg::reply函数返回当前的GameState结构体内容。
 
+## 4. 测试
+Cargo.toml 配置了3个 features：
+1. prod：默认的feature，用于生产环境，这也是默认的feature； 
+2. test_user_first：用于测试用户先手； 
+3. test_program_first：用于测试程序先手。
+
+
+在 tests/basic.rs 中，提供了4个测试用例，分别测试用户先手和程序先手的情况。分别是：
+1. test_handle_user_first_easy(): 测试用户先手，简单难度；对应的测试命令是：
+    - cargo test test_handle_user_first_easy --features test_user_first
+2. test_handle_program_first_easy()：测试程序先手，简单难度；对应的测试命令是：
+    - cargo test test_handle_program_first_easy --features test_program_first
+3. test_handle_user_first_hard()：测试用户先手，困难难度；对应的测试命令是：
+    - cargo test test_handle_user_first_hard --features test_user_first
+4. test_handle_program_first_hard()：测试程序先手，困难难度；对应的测试命令是：
+    - cargo test test_handle_program_first_hard --features test_program_first
+
+以上4个测试用例如果不指定特性，则默认为 prod。依然可以测试通过，但是谁先手，由随机决定。
+如果不想一个一个测试，建议分别执行以下命令，可以覆盖所有情况：
+1. cargo test：默认启用prod特性，谁先手随机。
+2. cargo test --no-default-features --features test_user_first：启用test_user_first特性，用户先手。但test_handle_program_first_easy() 和 test_handle_program_first_hard() 实际先手为用户。
+3. cargo test --no-default-features --features test_program_first：启用test_program_first特性，程序先手。但test_handle_user_first_easy() 和 test_handle_user_first_hard() 实际先手为程序。
+
 ## 4. 其他
 游戏中设有两种难度级别：DifficultyLevel::Easy和DifficultyLevel::Hard。在简单难度下，程序应当随机选择要移除的石子数量；而在困难难度下，程序需要找出最优的石子数量移除。
 

@@ -16,6 +16,7 @@ gtest = { git = "https://github.com/gear-tech/gear.git", tag = "v1.4.1" }
 pebbles-game-io.path = "io"
 
 [features]  
+default = ["prod"]
 test_user_first = []  
 test_program_first = []  
 prod = []  

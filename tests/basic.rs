@@ -69,7 +69,7 @@ fn test_state() {
 /// 用户先手，难度：简单。
 /// 测试方法，命令行执行：
 /// </br>
-/// cargo test test_handle_user_first_easy --features test_user_first
+/// cargo test test_handle_user_first_easy --no-default-features --features test_user_first
 #[test]
 fn test_handle_user_first_easy() {
     let sys = System::new();
@@ -96,7 +96,7 @@ fn test_handle_user_first_easy() {
 /// 程序先手，难度：简单。
 /// 测试方法，命令行执行：
 /// </br>
-/// cargo test test_handle_program_first_easy --features test_program_first
+/// cargo test test_handle_program_first_easy --no-default-features --features test_program_first
 #[test]
 fn test_handle_program_first_easy() {
     let sys = System::new();
@@ -122,7 +122,7 @@ fn test_handle_program_first_easy() {
 /// 用户先手，难度：困难。
 /// 测试方法，命令行执行：
 /// </br>
-/// cargo test test_handle_user_first_hard --features test_user_first
+/// cargo test test_handle_user_first_hard --no-default-features --features test_user_first
 #[test]
 fn test_handle_user_first_hard() {
     let sys = System::new();
@@ -148,7 +148,7 @@ fn test_handle_user_first_hard() {
 /// 程序先手，难度：困难。
 /// 测试方法，命令行执行：
 /// </br>
-/// cargo test test_handle_program_first_hard --features test_program_first
+/// cargo test test_handle_program_first_hard --no-default-features --features test_program_first
 #[test]
 fn test_handle_program_first_hard() {
     let sys = System::new();
